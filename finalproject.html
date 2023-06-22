@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christina Lisunov Final Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="finalproject.js"></script>
+    <style>
+        body {
+            background-image: url("backgroundProject copy-1.jpg");
+        }
+
+        header {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .formbg {
+            background-image: url("linesProject copy-1.jpg");
+            height: 150px;
+            width: 600px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+
+        button {
+            margin-top: 18px;
+        }
+
+
+        #datelabel {
+            margin-left: 70px;
+            margin-top: 20px;
+        }
+
+        .date {
+            width: 100px;
+        }
+
+        #task {
+            display: block;
+            width: 200px;
+            margin-left: 70px;
+            margin-top: 10px;
+            background-color: rgba(0, 0, 0, 0);
+            border-color: rgba(0, 0, 0, 0);
+        }
+
+        .notesContainer {
+            display: block;
+            margin-left: 10%;
+        }
+
+        .stickynote {
+            background-image: url("notes copy-1.jpg");
+            min-width: 175px;
+            height: 300px;
+            background-repeat: no-repeat;
+            float: left;
+            display: block;
+            position: relative;
+        }
+
+
+        p.stickytask {
+            max-width: 150px;
+            height: 120px;
+            float: left;
+            position: absolute;
+            margin-top: 60px;
+            margin-left: 10px;
+            font-size: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            overflow-wrap: break-word;
+        }
+
+        p.stickytask::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        p.stickytask::-webkit-scrollbar-track {
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        p.stickytask::-webkit-scrollbar-thumb {
+
+            background: rgb(131, 126, 126);
+            border-radius: 10px;
+        }
+
+
+        p.stickydate {
+            float: right;
+            position: absolute;
+            margin-left: 5px;
+            margin-top: 190px;
+            font-size: 100%;
+        }
+
+        .stickynote:hover .btn-close {
+            display: block;
+            position: absolute;
+        }
+
+        .btn-close {
+            float: left;
+            margin-left: 140px;
+            margin-top: 30px;
+            font-size: 100%;
+            display: none;
+        }
+    </style>
+</head>
+
+<body onload="stickyOnLoad();">
+
+    <div class="container-fluid wrapper">
+        <header>
+            <img class="titleimg" src="myTaskBoard copy-1.jpg" alt="My Task Board" />
+        </header>
+
+        <div class="formbg">
+            <form id="form">
+                <div class="form-group">
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <textarea name="text" rows="3" cols="10" wrap="soft" id="task" type="text"
+                                class="form-control task" placeholder="Enter your task here!" required></textarea>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label id="datelabel">Due Date:</label>
+                                    <input id="date" type="datetime-local" class="form-control"
+                                        placeholder="Enter Due Date" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button onclick="addNote()" class="btn btn-success me-md-2" type="button">Add
+                                            Note</button>
+                                        <button onclick="clearForm()" class="btn btn-danger" type="button">Reset</button>
+                                    </div>
+                                    <div class="col-sm-4"></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    </form>
+    </div>
+
+    <div class="notesContainer">
+        <button type="button" class="btn-close " aria-label="Close"></button>
+        <div class="row notesRow">
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>
